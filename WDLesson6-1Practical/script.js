@@ -8,15 +8,15 @@ Challenge 1: Add the appropriate images to each array below from the list of ima
 //Challenge 3: Add appropriate titles for each food in their corresponding array. Use the image names as a hint for the food title.
 
 let meat_images = ["beeftips.jpg","ribeye.jpg","steak.jpg","brisket.jpg"];
-let meat_prices = [4.99,11.99,9.99,6.99];
+let meat_prices = [41.99,121.929,93.99,62.99];
 let meat_titles = ["Beef tips","Ribeye","Steak","Brisket"];
 
 let seafood_images = ["clams.jpg","crabs.jpg","lobster.png","scallops.jpg","shrimp.jpg","tuna.jpg"];
-let seafood_prices = [0.99, 12.99, 14.99, 4.99, 7.99, 3.99];
+let seafood_prices = [2.99, 132.99, 146.99, 42.99, 57.99, 73.99];
 let seafood_titles = ["Clams","Crabs","Lobster","Scallops","Shrimp","Tuna"];
 
 let dessert_images = ["flan.jpg","passionberry.jpeg","oreocup.jpg"];
-let dessert_prices = [5.99, 3.99, 6.99];
+let dessert_prices = [53.99, 33.99, 56.99];
 let dessert_titles = ["Flan","Passion berry","Oreo Cup"];
 
 function init(){
