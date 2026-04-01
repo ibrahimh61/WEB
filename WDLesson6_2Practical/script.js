@@ -7,19 +7,35 @@ function BHS(){
   let output = document.getElementById("output");
 
   //Challenge 1: Create and display a card of the information contained in the JSON variable school
+  let build="";
+  build+=`<div class="card">
+    <h2>${school.name}</h2>
+    <img src= "${school.image}">
+    <p>${school.address}</p>
+  </div>`;
+output.innerHTML=build;
 
 }
 function artist(){
   //Challenge 2: Fill the JSON below with the specified information for your favorite artist
   let artist = {
-    "name":"",
-    "image":"",
-    "album":"",
-    "url":""
+    "name":"Katy Perry",
+    "image":"https://i.scdn.co/image/ab6761610000e5eb4be5330bd48527f9dd620663",
+    "album":"Dark Horse",
+    "url":"https://www.katyperry.com/#home"
   };
   let output = document.getElementById("output");
 
   //Challenge 3: Build a card for the information in the JSON. Make the image a hyperlink to the url provided.
+  let build="";
+  build+= `<div class="card">
+                  <h2>${artist.name}</h2>
+                  <p>${artist.album}</p>
+                  <a href="${artist.url}"target="_blank">
+                    <img src="${artist.image}">
+                  </a>
+                </div>`;
+  output.innerHTML=build;
 
 }
 
