@@ -1,7 +1,7 @@
 let data, info;
 
 async function init(){   
-  let link = "311.json"; //let link = "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1000";
+  let link = "ABC.json"; //let link = "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1000";
   info = await fetch(link);
   data = await info.json();
   
@@ -64,6 +64,7 @@ function filterByBorough(){
   
   let build = "";
   let ct = 0;
+}
 
   for(let i = 0; i < data.length; i+=1){
     let complaint = data[i];
@@ -81,6 +82,7 @@ function filterByBorough(){
                 </div>`;
       ct += 1;
     }
+  }
 
 // Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
 
@@ -91,7 +93,7 @@ function filterByBorough(){
   
   let build = "";
   let ct = 0;
-
+}
   for(let i = 0; i < data.length; i+=1){
     let complaint = data[i];
     if(complaint_zip == borough){
@@ -108,3 +110,4 @@ function filterByBorough(){
                 </div>`;
       ct += 1;
     }
+  }
