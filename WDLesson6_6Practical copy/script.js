@@ -9,105 +9,50 @@ async function init(){
   let build = "";
 
   for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
+    let crash = data[i];
     build += `<div class="fitted card">
-                 <h3>${complaint.complaint_type}</h3>
+                 <h3>${crash.crash_date}</h3>
                  <hr>
-                 <p>${complaint.borough}</p>
-                 <p>${complaint.incident_zip}</p>
-                 <p>${complaint.descriptor}</p>
+                 <p>${crash.on_street_name}</p>
+                 <p>${crash.off_street_name}</p>
+                 <p>${crash.contributing_factor_vehicle_1}</p>
                  <hr>
-                 <p>${complaint.created_date}</p>
+                 <p>${crash.number_of_persons_injured}&nbsp;injured</p>
+                 <p>${crash.number_of_persons_killed}&nbsp;killed</p>
                  <hr>
-                 <p>${complaint.agency}</p>
+                 <p>${crash.collision_id}</p>
               </div>`    
   }
   output.innerHTML = build;
 }
 
 // Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByBorough(){
+function filterBystreet(){
   let output = document.getElementById("output");
-  let borough = document.getElementById("borough").value;
+  let street = document.getElementById("street").value;
   let result = document.getElementById("result");
   
   let build = "";
   let ct = 0;
 
   for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    if(complaint.borough == borough){
+    let crash = data[i];
+    if(crash.on_street_name == street){
       build += `<div class="fitted card">
-                    <h3>${complaint.complaint_type}</h3>
-                    <hr>
-                    <p>${complaint.borough}</p>
-                    <p>${complaint.incident_zip}</p>
-                    <p>${complaint.descriptor}</p>
-                    <hr>
-                    <p>${complaint.created_date}</p>
-                    <hr>
-                    <p>${complaint.agency}</p>
-                </div>`;
+                 <h3>${crash.crash_date}</h3>
+                 <hr>
+                 <p>${crash.on_street_name}</p>
+                 <p>${crash.off_street_name}</p>
+                 <p>${crash.contributing_factor_vehicle_1}</p>
+                 <hr>
+                 <p>${crash.number_of_persons_injured}&nbsp;injured</p>
+                 <p>${crash.number_of_persons_killed}&nbsp;killed</p>
+                 <hr>
+                 <p>${crash.collision_id}</p>
+              </div>` 
       ct += 1;
     }
   }
   result.innerHTML = `${ct} Results found.`
   output.innerHTML = build;
 }
-
-// Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-
-function filterByBorough(){
-  let output = document.getElementById("output");
-  let borough = document.getElementById("zip").value;
-  let result = document.getElementById("result");
-  
-  let build = "";
-  let ct = 0;
-}
-
-  for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    if(complaint_zip == borough){
-      build += `<div class="fitted card">
-                    <h3>${complaint.complaint_type}</h3>
-                    <hr>
-                    <p>${complaint.borough}</p>
-                    <p>${complaint.incident_zip}</p>
-                    <p>${complaint.descriptor}</p>
-                    <hr>
-                    <p>${complaint.created_date}</p>
-                    <hr>
-                    <p>${complaint.agency}</p>
-                </div>`;
-      ct += 1;
-    }
-  }
-
-// Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
-
-function filterByBorough(){
-  let output = document.getElementById("output");
-  let borough = document.getElementById("zip").value;
-  let result = document.getElementById("result");
-  
-  let build = "";
-  let ct = 0;
-}
-  for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    if(complaint_zip == borough){
-      build += `<div class="fitted card">
-                    <h3>${complaint.complaint_type}</h3>
-                    <hr>
-                    <p>${complaint.borough}</p>
-                    <p>${complaint.incident_zip}</p>
-                    <p>${complaint.descriptor}</p>
-                    <hr>
-                    <p>${complaint.created_date}</p>
-                    <hr>
-                    <p>${complaint.agency}</p>
-                </div>`;
-      ct += 1;
-    }
-  }
